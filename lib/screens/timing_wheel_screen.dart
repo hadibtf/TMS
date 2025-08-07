@@ -13,21 +13,13 @@ class TimingWheelScreen extends StatelessWidget {
       backgroundColor: AppColors.background,
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.menu),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Navigate back to station selection
             Navigator.of(context).pop();
           },
         ),
         title: const Text('ARRIVALS'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Placeholder for search functionality
-            },
-          ),
-        ],
       ),
       body: Center(
         child: Consumer<ScheduleViewModel>(
@@ -42,26 +34,6 @@ class TimingWheelScreen extends StatelessWidget {
             );
           },
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
-            label: 'Info',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: 0, // Highlight the Home icon
-        onTap: (index) {
-          // Placeholder for navigation
-        },
       ),
     );
   }

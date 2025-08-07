@@ -8,9 +8,11 @@ class TimeDifferenceBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Don’t show past arrivals
+    if (difference.isNegative) return const SizedBox.shrink();
+
     final minutes = difference.inMinutes;
-    // Show only if the train has not yet arrived
-    if (minutes < 0) return const SizedBox.shrink();
+    final seconds = difference.inSeconds.remainder(60);
 
     return Container(
       padding: const EdgeInsets.symmetric(
@@ -22,7 +24,7 @@ class TimeDifferenceBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(
-        '${minutes}m',
+        '${minutes}m${seconds.toString().padLeft(2, '0')}s',
         style: const TextStyle(
           color: AppColors.textPrimary,
           fontWeight: FontWeight.bold,
