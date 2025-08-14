@@ -1,0 +1,27 @@
+{
+  "@@locale": "fa",
+  "appTitle": "برنامه زمان‌بندی مترو",
+  "directionElGoliToNoor": "ائل‌گلی به نور",
+  "directionNoorToElGoli": "نور به ائل‌گلی",
+  "searchStationHint": "جستجوی ایستگاه",
+  "arrivalsTitle": "ورودها",
+  "noMoreTrains": "امروز قطاری باقی نمانده است",
+  "languageEnglish": "انگلیسی",
+  "languagePersian": "فارسی",
+  "systemDefault": "تنظیمات پیش‌ فرض سیستم",
+  "stationSubtitle": "ایستگاه {stationName}",
+  "@stationSubtitle": {
+    "description": "زیرنویس کارت ایستگاه",
+    "placeholders": {
+      "stationName": {"type": "Object"}
+    }
+  },
+  "timeBadge": "{minutes}د{secondsPadded}ث",
+  "@timeBadge": {
+    "description": "نشان شمارش معکوس تا قطار بعدی",
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "secondsPadded": {"type": "String"}
+    }
+  }
+}

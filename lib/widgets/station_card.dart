@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tms/theme/design_constants.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
 
 class StationCard extends StatelessWidget {
   final String stationName;
@@ -45,7 +46,7 @@ class StationCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '$stationName Railway Station',
+                    AppLocalizations.of(context).stationSubtitle(stationName),
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.textPrimaryDark.withOpacity(0.6)),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

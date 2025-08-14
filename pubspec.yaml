@@ -1,6 +1,6 @@
 name: tms
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
@@ -9,17 +9,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  shared_preferences: ^2.2.2
+
   # State Management
   provider: ^6.0.5
 
   # Models & JSON Parsing
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
-  
+
   # UI & Theming
   google_fonts: ^6.1.0
-  intl: ^0.18.1
 
   cupertino_icons: ^1.0.6
 
@@ -36,6 +39,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true  # enables gen-l10n
 
   assets:
     - assets/trains_schedule.json

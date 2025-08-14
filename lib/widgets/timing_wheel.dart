@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tms/theme/design_constants.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
 import 'package:tms/widgets/countdown_badge.dart';
 
 class TimingWheel extends StatelessWidget {
@@ -72,7 +73,7 @@ class TimingWheel extends StatelessWidget {
         else
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Text("No more trains today", style: _getTimeStyle(AppFontSizes.lg, 1.0)),
+            child: Text(AppLocalizations.of(context).noMoreTrains, style: _getTimeStyle(AppFontSizes.lg, 1.0)),
           ),
 
         // Upcoming Times (fading in)

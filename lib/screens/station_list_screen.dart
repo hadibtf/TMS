@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:tms/viewmodels/schedule_viewmodel.dart';
 import 'package:tms/widgets/station_card.dart';
 import 'package:tms/theme/design_constants.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
+import 'package:tms/viewmodels/locale_viewmodel.dart';
 
 class StationListScreen extends StatefulWidget {
   const StationListScreen({super.key});
@@ -27,6 +29,39 @@ class _StationListScreenState extends State<StationListScreen> {
         backgroundColor: AppColors.lightBackground,
         elevation: 0,
         automaticallyImplyLeading: false, // We might want a custom back button
+        actions: [
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.language),
+            onSelected: (value) {
+              final localeVM = context.read<LocaleViewModel>();
+              switch (value) {
+                case 'system':
+                  localeVM.setSystemDefault();
+                  break;
+                case 'en':
+                  localeVM.setLocale(const Locale('en'));
+                  break;
+                case 'fa':
+                  localeVM.setLocale(const Locale('fa'));
+                  break;
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'system',
+                child: Text(AppLocalizations.of(context).systemDefault),
+              ),
+              PopupMenuItem(
+                value: 'en',
+                child: Text(AppLocalizations.of(context).languageEnglish),
+              ),
+              PopupMenuItem(
+                value: 'fa',
+                child: Text(AppLocalizations.of(context).languagePersian),
+              ),
+            ],
+          ),
+        ],
         title: Padding(
           padding: const EdgeInsets.only(top: AppDimensions.paddingMd),
           child: TextField(
@@ -36,7 +71,7 @@ class _StationListScreenState extends State<StationListScreen> {
               });
             },
             decoration: InputDecoration(
-              hintText: 'Search for a station',
+              hintText: AppLocalizations.of(context).searchStationHint,
               hintStyle: TextStyle(color: AppColors.textPrimaryDark.withOpacity(0.5)),
               prefixIcon: Icon(Icons.search, color: AppColors.textPrimaryDark.withOpacity(0.5)),
               border: OutlineInputBorder(

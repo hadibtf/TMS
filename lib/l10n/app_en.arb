@@ -1,0 +1,27 @@
+{
+  "@@locale": "en",
+  "appTitle": "TMS - Train Metro Schedule",
+  "directionElGoliToNoor": "El-Goli to Noor",
+  "directionNoorToElGoli": "Noor to El-Goli",
+  "searchStationHint": "Search for a station",
+  "arrivalsTitle": "Arrivals",
+  "noMoreTrains": "No more trains today",
+  "languageEnglish": "English",
+  "languagePersian": "Persian",
+  "systemDefault": "System default",
+  "stationSubtitle": "{stationName} Railway Station",
+  "@stationSubtitle": {
+    "description": "Subtitle under station name on card",
+    "placeholders": {
+      "stationName": {"type": "Object"}
+    }
+  },
+  "timeBadge": "{minutes}m{secondsPadded}s",
+  "@timeBadge": {
+    "description": "Countdown badge displaying minutes and seconds until next train",
+    "placeholders": {
+      "minutes": {"type": "int"},
+      "secondsPadded": {"type": "String"}
+    }
+  }
+}

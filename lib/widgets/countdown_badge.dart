@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tms/theme/design_constants.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
 
 class TimeDifferenceBadge extends StatelessWidget {
   final Duration difference;
@@ -24,7 +25,10 @@ class TimeDifferenceBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(
-        '${minutes}m${seconds.toString().padLeft(2, '0')}s',
+        AppLocalizations.of(context).timeBadge(
+          minutes,
+          seconds.toString().padLeft(2, '0'),
+        ),
         style: const TextStyle(
           color: AppColors.textPrimary,
           fontWeight: FontWeight.bold,

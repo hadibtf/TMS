@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
 import 'package:tms/theme/design_constants.dart';
 import 'package:tms/viewmodels/schedule_viewmodel.dart';
 
@@ -16,7 +17,7 @@ class DirectionSelectionScreen extends StatelessWidget {
           _buildDirectionPane(
             context: context,
             routeName: 'El-Goli-To-Noor',
-            title: 'Eastbound',
+            title: AppLocalizations.of(context).directionElGoliToNoor,
             backgroundColor: AppColors.lightBackground,
             textColor: AppColors.textPrimaryDark,
           ),
@@ -24,7 +25,7 @@ class DirectionSelectionScreen extends StatelessWidget {
           _buildDirectionPane(
             context: context,
             routeName: 'Noor-To-El-Goli',
-            title: 'Westbound',
+            title: AppLocalizations.of(context).directionNoorToElGoli,
             backgroundColor: Colors.white,
             textColor: AppColors.textPrimaryDark,
           ),

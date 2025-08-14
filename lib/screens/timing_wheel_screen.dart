@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tms/theme/design_constants.dart';
 import 'package:tms/viewmodels/schedule_viewmodel.dart';
 import 'package:tms/widgets/timing_wheel.dart';
+import 'package:tms/l10n/gen/app_localizations.dart';
 
 class TimingWheelScreen extends StatelessWidget {
   const TimingWheelScreen({super.key});
@@ -19,7 +20,7 @@ class TimingWheelScreen extends StatelessWidget {
             Navigator.of(context).pop();
           },
         ),
-        title: const Text('ARRIVALS'),
+        title: Text(AppLocalizations.of(context).arrivalsTitle),
       ),
       body: Center(
         child: Consumer<ScheduleViewModel>(
